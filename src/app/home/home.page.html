@@ -1,0 +1,58 @@
+<ion-content padding>
+
+  <ion-item color="dark">
+    <ion-label>Duration</ion-label>
+    <ion-datetime
+      display-format="mm:ss"
+      placeholder="Tab Here"
+      [(ngModel)]="fullTime"
+    ></ion-datetime>
+  </ion-item>
+
+  <!-- 
+    ng-circle-progress API can be found here:
+      https://www.npmjs.com/package/ng-circle-progress
+   -->
+
+  <circle-progress
+    [percent]="percent"
+    [maxPercent]="100"
+    [radius]="radius"
+    [title]="myTitle"
+    [titleFontSize]="50"
+    [titleColor]="'white'"
+    [subtitle]="mySubtitle"
+    [subtitleFontSize]="30"
+    [subtitleColor]="grey"
+    [showUnits]="false"
+    [outerStrokeWidth]="16"
+    [outerStrokeColor]="'#FF00CB'"
+    [outerStrokeGradient]="true"
+    [outerStrokeGradientStopColor]="'#FFAACB'"
+    [showZeroOuterStroke]="false"
+    [backgroundStroke]="'#FF0000'"
+    [backgroundStrokeWidth]="3"
+    [innerStrokeWidth]="8"
+    [innerStrokeColor]="'#C7E596'"
+    [showInnerStroke]="false"
+    [animation]="true"
+    [animationDuration]="animDur"
+  ></circle-progress>
+
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    
+    <ng-container *ngIf="timer == false; else running">
+      <ion-fab-button (click)="startTime()">
+        <ion-icon name="play"></ion-icon>
+      </ion-fab-button>
+    </ng-container>
+    
+    <ng-template #running>
+      <ion-fab-button (click)="stopTime()">
+        <ion-icon name="square"></ion-icon>
+      </ion-fab-button>
+    </ng-template>
+    
+  </ion-fab>
+
+</ion-content>
