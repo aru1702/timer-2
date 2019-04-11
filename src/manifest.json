@@ -1,12 +1,20 @@
 {
-  "name": "app",
-  "short_name": "app",
+  "name": "Simple Timer",
+  "short_name": "Simple Timer",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
-  "display": "standalone",
+  "display": "fullscreen",
+
   "scope": "/",
   "start_url": "/",
   "icons": [
+
+    {
+      "src": "assets/icon/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+
     {
       "src": "assets/icons/icon-72x72.png",
       "sizes": "72x72",
@@ -40,11 +48,6 @@
     {
       "src": "assets/icons/icon-384x384.png",
       "sizes": "384x384",
-      "type": "image/png"
-    },
-    {
-      "src": "assets/icons/icon-512x512.png",
-      "sizes": "512x512",
       "type": "image/png"
     }
   ]
